@@ -1,5 +1,6 @@
 # app.py
 import random as r
+from turtle import down
 
 from flask import Flask, render_template, Response, request  # importing the render_template function
 
@@ -23,8 +24,10 @@ def hello():
     # init the grid to grid_size
     grid = init_grid(size=grid_size)
     print("grid has been init")
-    rand_grid = fill_random(grid)
-    print_grid (rand_grid)
+    new_grid = insert_into_grid([9,9,7], grid, "word")
+    print_grid(new_grid)
+    final_grid = fill_random(new_grid)
+    print_grid(final_grid)
 
 # must be words under size 13
     word_list = [
@@ -48,7 +51,7 @@ def fill_random(grid):
     all_letters = "abcdefghijklmnopqrstuvwxyz"
     for x in range(len(grid)):
         for y in range(13):
-            if (grid[x][y] != 0):
+            if (grid[x][y] == 0):
                 grid[x][y] = r.choice(all_letters)
             else:
                 pass
@@ -59,5 +62,71 @@ def print_grid(grid):
     for x in range(len(grid)):
         print(grid[x])
     print()
+
+def insert_into_grid(cords, grid, word):
+    # format: [x,y,direction]
+    
+    word_len = len(word)
+
+    # up  
+    if (cords[2] == 0):
+        for x in range(word_len):
+            if (grid[cords[0]-x][cords[1]] == 0):
+                grid[cords[0]-x][cords[1]] = word[x]
+            else:
+                return (0) 
+        return(grid)
+
+    # down  
+    if (cords[2] == 1):
+        for x in range(word_len):
+            if (grid[cords[0]+x][cords[1]] == 0):
+                grid[cords[0]+x][cords[1]] = word[x]
+            else:
+                return (0)
+        return(grid)
+
+    # left  
+    if (cords[2] == 2):
+        for x in range(word_len):
+            if(grid[cords[0]][cords[1]-x] == 0): 
+              grid[cords[0]][cords[1]-x] = word[x]
+            else:
+                return (0)
+        return(grid)
+
+    # right  
+    if (cords[2] == 3):
+        for x in range(word_len):
+            if (grid[cords[0]][cords[1]+x] == 0): 
+                grid[cords[0]][cords[1]+x] = word[x]
+            else:
+                return (0)
+        return(grid)
+
+    # \ diaginal up 
+    if (cords[2] == 4):
+        for x in range(word_len):
+            grid[cords[0]-x][cords[1]-x] = word[x]
+        return(grid)
+
+    # \ diaginal  down
+    if (cords[2] == 5):
+        for x in range(word_len):
+            grid[cords[0]+x][cords[1]+x] = word[x]
+        return(grid)
+
+    # / diaginal  up
+    if (cords[2] == 6):
+        for x in range(word_len):
+            grid[cords[0]-x][cords[1]+x] = word[x]
+        return(grid)
+    
+    # / diaginal  down
+    if (cords[2] == 7):
+        for x in range(word_len):
+
+            grid[cords[0]+x][cords[1]-x] = word[x]
+        return(grid)
 
 app.run(debug = True) 
