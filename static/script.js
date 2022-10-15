@@ -17,7 +17,7 @@ window.onload = function () {
     let column = 1;
     for (let i = 1; i <= celltot; i++) {
         let cell = document.createElement('div');
-        cell.style.border = '1px solid black';
+        cell.style.border = '.1px solid black';
         cell.style.gridRow = row;
         cell.style.gridColumn = column;
         cell.textContent = i;
