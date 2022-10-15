@@ -43,7 +43,7 @@
                 cell.style.border = '.1px solid black';
                 cell.style.gridRow = row;
                 cell.style.gridColumn = column;
-                cell.textContent = '{% for x in grid %} {{x}} {% endfor %}';
+                cell.textContent = 'grid[0][0]' ;
                 column += 1;
                 if (column === rowtot + 1) {
                     row += 1;

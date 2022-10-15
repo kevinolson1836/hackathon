@@ -41,7 +41,10 @@ def hello():
         "fenced"
         ]
 
-    return render_template('index.html', grid=grid)
+    import json
+    json_grid = json.dumps(grid)
+
+    return render_template('index.html', grid=json_grid)
 
 def init_grid(size):
     grid = []
