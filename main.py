@@ -22,12 +22,6 @@ def hello():
     grid = init_grid(size=grid_size)
     print("grid has been init")
 
-
-
-
-
-
-
 # must be words under size 13
     word_list = [
         "Intelligence"
@@ -40,7 +34,7 @@ def hello():
 
     return render_template('index.html', data=grid)
 
-def init_gridu(size):
+def init_grid(size):
     grid = []
     for _ in range(size):
         grid.append([0]*size)
