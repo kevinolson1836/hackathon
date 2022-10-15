@@ -23,14 +23,16 @@ def hello():
     # init the grid to grid_size
     grid = init_grid(size=grid_size)
     print("grid has been init")
+    rand_grid = fill_random(grid)
+    print_grid (rand_grid)
 
 # must be words under size 13
     word_list = [
-        "Intelligence"
-        "dogs"
-        "far"
-        "jack"
-        "poops"
+        "Intelligence",
+        "dogs",
+        "far",
+        "jack",
+        "poops",
         "fenced"
         ]
 
@@ -42,6 +44,20 @@ def init_grid(size):
         grid.append([0]*size)
     return(grid)
 
-app.run(debug = True) 
+def fill_random(grid):
+    all_letters = "abcdefghijklmnopqrstuvwxyz"
+    for x in range(len(grid)):
+        for y in range(13):
+            if (grid[x][y] != 0):
+                grid[x][y] = r.choice(all_letters)
+            else:
+                pass
+    return(grid)
 
-word1 = 
+def print_grid(grid):
+    print()
+    for x in range(len(grid)):
+        print(grid[x])
+    print()
+
+app.run(debug = True) 
