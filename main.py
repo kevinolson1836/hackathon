@@ -1,10 +1,12 @@
 # app.py
 import random as r
 from turtle import down
-
+import direcrion
 from flask import Flask, render_template, Response, request  # importing the render_template function
 
+x = direcrion.wordStartingpoint("bana")
 
+print(x)
 # TODO
 #       we have a 13X13 init to 0's
 #       find a location for the word to fit
