@@ -23,6 +23,11 @@ def hello():
     print("grid has been init")
 
 
+
+
+
+
+
 # must be words under size 13
     word_list = [
         "Intelligence"
@@ -42,4 +47,4 @@ def init_gridu(size):
     return(grid)
 
 app.run(debug = True) 
-#iloveukevinnbrad
+
