@@ -35,7 +35,7 @@ def hello():
 
     return render_template('index.html', data=grid)
 
-def init_grid(size):
+def init_gridu(size):
     grid = []
     for _ in range(size):
         grid.append([0]*size)
