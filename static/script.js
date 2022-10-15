@@ -6,7 +6,7 @@ window.onload = function () {
 
     let gridContainer = document.querySelector('.grid');
 
-    let rowtot = 10;
+    let rowtot = 15;
     let celltot = rowtot * rowtot;
 
     gridContainer.style.display = 'grid';
