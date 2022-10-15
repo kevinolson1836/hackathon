@@ -28,8 +28,8 @@ def hello():
     print("grid has been init")
     new_grid = insert_into_grid([9,9,7], grid, "word")
     print_grid(new_grid)
-    final_grid = fill_random(new_grid)
-    print_grid(final_grid)
+    # final_grid = fill_random(new_grid)
+    # print_grid(final_grid)
 
 # must be words under size 13
     word_list = [
@@ -41,7 +41,7 @@ def hello():
         "fenced"
         ]
 
-    return render_template('index.html', data=grid)
+    return render_template('index.html', grid=grid)
 
 def init_grid(size):
     grid = []
