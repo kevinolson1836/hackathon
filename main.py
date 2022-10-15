@@ -1,4 +1,6 @@
 # app.py
+import random as r
+
 from flask import Flask, render_template, Response, request  # importing the render_template function
 
 
@@ -42,3 +44,4 @@ def init_grid(size):
 
 app.run(debug = True) 
 
+word1 = 
