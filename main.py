@@ -48,24 +48,17 @@ def hello():
         "far",
         "jack",
         "poops",
-        "fenced",
-        "cream",
-        "aorta",
-        "donkeykong",
-        "hacker",
-        "donut",
-        "cheeze",
-        "lightness",
-        "mediterranean",
-        "jumbo",
-        "ryan",
-        "consume"
+        "fenced"
         ]
 
-    import json
-    json_grid = json.dumps(grid)
+    count = 0
+    mega_str = ""
+    for x in range(grid_size):
+        for y in range(grid_size):
+            mega_str = mega_str+ str(grid[x][y])
+            count = count + 1
 
-    return render_template('index.html', grid=json_grid)
+    return render_template('index.html', grid=mega_str)
 
 def init_grid(size):
     grid = []
