@@ -28,10 +28,11 @@ def hello():
     countsss = 0
     # new_grid = insert_into_grid([9,9,7], grid, "word")
     while countsss != 1:
-        x = direcrion.wordStartingpoint("abcd")
+        x = direcrion.wordStartingpoint("ABCD")
         try:
             if(grid[x[0][0]][x[0][0]] == 0):
                 new_grid = insert_into_grid(x[0],grid,x[1])
+                # new_grid = insert_into_grid([5,5,6],grid,x[1])
                 countsss = countsss +1
             else:
                 break
@@ -85,7 +86,10 @@ def print_grid(grid):
 
 def insert_into_grid(cords, grid, word):
     # format: [x,y,direction]
-    
+    temp  = cords[0]
+    cords[0] = cords[1]
+    cords[1] = temp
+
     word_len = len(word)
 
     print("cords: ", end='')
@@ -157,8 +161,8 @@ def insert_into_grid(cords, grid, word):
         print("trying DiagUpRight")
         try:
             for x in range(word_len):
-                if (grid_coppy[cords[0]-x][cords[1]-x] == 0): 
-                    grid_coppy[cords[0]-x][cords[1]-x] = word[x]
+                if (grid_coppy[cords[0]-x][cords[1]+x] == 0): 
+                    grid_coppy[cords[0]-x][cords[1]+x] = word[x]
                 else:
                     return(grid)
         except:
@@ -172,8 +176,8 @@ def insert_into_grid(cords, grid, word):
         print("trying diagUpLeft")
         try:
             for x in range(word_len):
-                if (grid_coppy[cords[0]+x][cords[1]+x] == 0):
-                    grid_coppy[cords[0]+x][cords[1]+x] = word[x]
+                if (grid_coppy[cords[0]-x][cords[1]-x] == 0):
+                    grid_coppy[cords[0]-x][cords[1]-x] = word[x]
                 else:
                     return (grid)
         except:
@@ -186,8 +190,8 @@ def insert_into_grid(cords, grid, word):
         print("trying diagDownRight")
         try:
             for x in range(word_len):
-                if (grid_coppy[cords[0]-x][cords[1]+x] == 0):
-                    grid_coppy[cords[0]-x][cords[1]+x] = word[x]
+                if (grid_coppy[cords[0]+x][cords[1]+x] == 0):
+                    grid_coppy[cords[0]+x][cords[1]+x] = word[x]
                 else:
                     return (grid)
         except:

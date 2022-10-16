@@ -58,6 +58,7 @@
                     cell.style.textAlign = "center";
                     cell.style.gridColumn = column;
                     cell.textContent = numbers[count];
+                    cell.onclick
                     column += 1;
                     count = count + 1;
                     if (column === 14) {
@@ -65,7 +66,7 @@
                         column = 1;
                     }
                     
-                    cell.onclick = function() {myFunction(cell)};
+                    
 
                     gridContainer.appendChild(cell);
                     // document.querySelector("div").style.color = "red"
@@ -73,9 +74,8 @@
             }
         };
         
-        // cell.style.color="green"
-        function myFunction(cell) {
-            cell.stlye.color = "green";
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello World";
         }
 
     </script>
