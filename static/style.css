@@ -2,6 +2,19 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.grid {
+    text-align: center;
+    float: left;
+}
+
+/* .grid-container {
+    background-color: red;
+  } */
+
+/* *{
+    background-color: red;
+} */
+
 /* .fart{
     background-color: aqua;
     color: orange;
