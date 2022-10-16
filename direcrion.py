@@ -32,56 +32,56 @@ def downSP(word):
     x = r.randint(0, 13)
     y = r.randint(0,13 - len(word))
     d = 0
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return (cord)
 
 def upSP(word):
     x = r.randint(0, 13)
     y = r.randint(len(word), 13)
     d = 1
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return (cord)
 
 def rightSP(word):
     y = r.randint(0, 13)
     x = r.randint(0,13 - len(word))
     d = 2
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return (cord)
 
 def leftSP(word):
     y = r.randint(0, 13)
     x = r.randint(len(word), 13)
     d = 3
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return(cord)
 
 def diagonalDownRight(word):
     y = r.randint(0,13 - len(word))
     x = r.randint(0,13 - len(word))
     d = 4
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return (cord)
 
 def diagonalUpLeft(word):
     y = r.randint(len(word), 13)
     x = r.randint(len(word), 13)
     d = 5
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return (cord)
 
 def diagonalDownLeft(word):
     x = r.randint(len(word), 13)
     y = r.randint(0,13 - len(word))
     d = 6
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return (cord)
 
 def diagonalUpRight(word):
     x = r.randint(0,13 - len(word))
     y = r.randint(len(word), 13)
     d = 7
-    cord = [x,y,d, word]
+    cord = [[x,y,d], word]
     return (cord)
 
 
@@ -112,8 +112,8 @@ word3SP = wordStartingpoint(word3)
 word4SP = wordStartingpoint(word4)
 word5SP = wordStartingpoint(word5) 
 
-# print(word1SP)
-# print(word2SP)
-# print(word3SP)
-# print(word4SP)
-# print(word5SP)
+print(word1SP)
+print(word2SP)
+print(word3SP)
+print(word4SP)
+print(word5SP)

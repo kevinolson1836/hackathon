@@ -47,9 +47,14 @@
             for (var i = 0; i < 13; i++) {
                 for (let x = 1; x <= 13; x++) {
                     let cell = document.createElement('div');
-                    cell.style.border = '.1px solid black';
+                    // cell.style.border = '.1px solid black';
                     cell.style.gridRow = row;
-                    cell.style.color = "blue";
+                    cell.style.color = "black";
+                    cell.style.fontSize = "35px";
+                    cell.style.fontWeight = "bold";
+                    cell.id = count;
+                    cell.style.width = "50px";
+                    cell.style.height = "50px";
                     cell.style.textAlign = "center";
                     cell.style.gridColumn = column;
                     cell.textContent = numbers[count];
@@ -59,11 +64,20 @@
                         row += 1;
                         column = 1;
                     }
+                    
+                    cell.onclick = function() {myFunction(cell)};
+
                     gridContainer.appendChild(cell);
                     // document.querySelector("div").style.color = "red"
                     }
                 }
         };
+        
+        // cell.style.color="green"
+        function myFunction(cell) {
+            cell.stlye.color = "green";
+        }
+
     </script>
     <!--<div class="fart">
         <h2>h</h2>
