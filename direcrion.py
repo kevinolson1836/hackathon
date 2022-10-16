@@ -5,12 +5,23 @@ word_list = [
         "far",
         "jack",
         "poops",
-        "fenced"
+        "fenced",
+        "cream",
+        "aorta",
+        "donkeykong",
+        "hacker",
+        "donut",
+        "cheeze",
+        "lightness",
+        "mediterranean",
+        "jumbo",
+        "ryan",
+        "consume"
         ]
 
 
 
-word_count = 5
+word_count = len(word_list) - 1
 wc = word_count
 
 
