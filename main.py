@@ -104,7 +104,9 @@ def insert_into_grid(cords, grid, word):
         try:
             for x in range(word_len):
                 if (grid_coppy[cords[0]-x][cords[1]] == 0):
-                    grid_coppy[cords[0]-x][cords[1]] = word[x]
+                    grid_coppy[cords[0]-x][cords[1]] = 0
+                    if x == word_len:
+                        grid_coppy[cords[0]-x][cords[1]] = word[x]
                 else:
                     return (grid)
         except:
