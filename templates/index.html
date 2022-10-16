@@ -38,6 +38,9 @@
 
             var numbers = '{{ grid }}';
             console.log(numbers)
+            var g = "test"
+            console.log(g[2])
+            numbers = JSON.parse(numbers)
             for (var i = 0; i < numbers.length; i++) {
                 let row = 1;
                 let column = 1;
@@ -46,7 +49,7 @@
                     cell.style.border = '.1px solid black';
                     cell.style.gridRow = row;
                     cell.style.gridColumn = column;
-                    cell.textContent = numbers;
+                    cell.textContent ="s";
                     column += 1;
                     if (column === rowtot + 1) {
                         row += 1;
