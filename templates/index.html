@@ -37,10 +37,11 @@
             gridContainer.style.gridTemplateColumns = `repeat(${rowtot}, 1fr)`;
 
             var numbers = '{{ grid }}';
+            // console.log(numbers)
+            // var g = "test"
             console.log(numbers)
-            var g = "test"
-            console.log(g[2])
-            numbers = JSON.parse(numbers)
+            // numbers = JSON.parse(numbers)
+            let count = 0;
             for (var i = 0; i < numbers.length; i++) {
                 let row = 1;
                 let column = 1;
@@ -49,8 +50,9 @@
                     cell.style.border = '.1px solid black';
                     cell.style.gridRow = row;
                     cell.style.gridColumn = column;
-                    cell.textContent ="s";
+                    cell.textContent =numbers[count];
                     column += 1;
+                    count = count +1;
                     if (column === rowtot + 1) {
                         row += 1;
                         column = 1;
