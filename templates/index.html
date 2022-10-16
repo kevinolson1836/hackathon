@@ -49,6 +49,8 @@
                     let cell = document.createElement('div');
                     cell.style.border = '.1px solid black';
                     cell.style.gridRow = row;
+                    cell.style.color = "blue";
+                    cell.style.textAlign = "center";
                     cell.style.gridColumn = column;
                     cell.textContent = numbers[count];
                     column += 1;
@@ -58,6 +60,7 @@
                         column = 1;
                     }
                     gridContainer.appendChild(cell);
+                    // document.querySelector("div").style.color = "red"
                     }
                 }
         };
