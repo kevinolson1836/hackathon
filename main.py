@@ -186,8 +186,8 @@ def insert_into_grid(cords, grid, word):
         print("trying diagDownRight")
         try:
             for x in range(word_len):
-                if (grid_coppy[cords[0]-x][cords[1]-x] == 0):
-                    grid_coppy[cords[0]-x][cords[1]-x] = word[x]
+                if (grid_coppy[cords[0]-x][cords[1]+x] == 0):
+                    grid_coppy[cords[0]-x][cords[1]+x] = word[x]
                 else:
                     return (grid)
         except:
