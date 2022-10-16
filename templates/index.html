@@ -36,8 +36,8 @@
             gridContainer.style.gridTemplateRows = `repeat(${rowtot}, 1fr)`;
             gridContainer.style.gridTemplateColumns = `repeat(${rowtot}, 1fr)`;
 
-            var numbers = '{% for x in grid %} {{x}} {% endfor %}';
-
+            var numbers = '{{ grid }}';
+            console.log(numbers)
             for (var i = 0; i < numbers.length; i++) {
                 let row = 1;
                 let column = 1;
@@ -46,17 +46,15 @@
                     cell.style.border = '.1px solid black';
                     cell.style.gridRow = row;
                     cell.style.gridColumn = column;
-                    cell.textContent = numbers[i];
+                    cell.textContent = numbers;
                     column += 1;
                     if (column === rowtot + 1) {
                         row += 1;
                         column = 1;
                     }
                     gridContainer.appendChild(cell);
+                    }
                 }
-            }
-
-
         };
     </script>
     <!--<div class="fart">
