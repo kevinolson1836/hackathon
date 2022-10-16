@@ -21,7 +21,7 @@ word_list = [
 
 
 
-word_count = 16
+word_count = len(word_list) - 1
 wc = word_count
 
 
