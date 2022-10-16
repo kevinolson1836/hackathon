@@ -42,14 +42,14 @@ wordDirection = ['down', 'up', 'right', 'left', 'diagDownRight', 'diagUpLeft', '
 
 def downSP(word):
     x = r.randint(0, 13)
-    y = r.randint(len(word), 13)
+    y = r.randint(0, 13-len(word))
     d = "down"
     cord = [[x,y,d], word]
     return (cord)
 
 def upSP(word):
     x = r.randint(0, 13)
-    y = r.randint(0, 13 - len(word))
+    y = r.randint(len(word), 13)
     d = "up"
     cord = [[x,y,d], word]
     return (cord)
@@ -70,28 +70,28 @@ def leftSP(word):
 
 def diagonalDownRight(word):
     x = r.randint(0, 13 - len(word))
-    y = r.randint(len(word), 13)
+    y = r.randint(0, 13-len(word))
     d = "diagDownRight"
     cord = [[x,y,d], word]
     return (cord)
 
 def diagonalUpLeft(word):
     x = r.randint(len(word), 13)
-    y = r.randint(0, 13 - len(word))
+    y = r.randint(len(word), 13)
     d = "diagUpLeft"
     cord = [[x,y,d], word]
     return (cord)
 
 def diagonalDownLeft(word):
     x = r.randint(len(word), 13)
-    y = r.randint(len(word), 13)
+    y = r.randint(0, 13 - len(word))
     d = "diagDownLeft"
     cord = [[x,y,d], word]
     return (cord)
 
 def diagonalUpRight(word):
     x = r.randint(0, 13 - len(word))
-    y = r.randint(0, 13 - len(word))
+    y = r.randint(len(word), 13)
     d = "DiagUpRight"
     cord = [[x,y,d], word]
     return (cord)
