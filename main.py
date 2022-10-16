@@ -50,7 +50,7 @@ def hello():
     # print("grid has been init")
     countsss = 0
     # new_grid = insert_into_grid([9,9,7], grid, "word")
-    while countsss != 3:
+    while countsss != 5:
         try:
             x = direcrion.wordStartingpoint(r.choice(word_list))
             if(grid[x[0][0]][x[0][0]] == 0):
@@ -64,7 +64,7 @@ def hello():
                 print("Exception: ",end='')
                 print(e,end="\n\n\n\n")
     # print_grid(new_grid)
-    # final_grid = fill_random(new_grid)
+    final_grid = fill_random(new_grid)
     # print_grid(final_grid)
 
 
@@ -72,7 +72,7 @@ def hello():
     mega_str = ""
     for x in range(grid_size):
         for y in range(grid_size):
-            mega_str = mega_str+ str(new_grid[x][y])
+            mega_str = mega_str+ str(final_grid[x][y])
             count = count + 1
 
     return render_template('index.html', grid=mega_str)
@@ -124,7 +124,14 @@ def insert_into_grid(cords, grid, word):
         print("trying up" )
         for x in range(word_len):
             if (grid_coppy[cords[0]-x][cords[1]] == 0):
-                grid_coppy[cords[0]-x][cords[1]] = word[x]
+                grid_coppy[cords[0]-x][cords[1]] = 0
+                if x == word_len - 1:
+                    for z in range(word_len):
+                        grid_coppy[cords[0]-z][cords[1]] = word[z]
+                        if z == word_len -1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
                 return (grid)
@@ -136,7 +143,14 @@ def insert_into_grid(cords, grid, word):
         print("trying down")
         for x in range(word_len):
             if (grid_coppy[cords[0]+x][cords[1]] == 0):
-                grid_coppy[cords[0]+x][cords[1]] = word[x]
+                grid_coppy[cords[0]+x][cords[1]] = 0
+                if x == word_len - 1:
+                    for z in range(word_len):
+                        grid_coppy[cords[0]+z][cords[1]] = word[z]
+                        if z == word_len -1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
 
@@ -151,7 +165,14 @@ def insert_into_grid(cords, grid, word):
         print("trying left")
         for x in range(word_len):
             if(grid_coppy[cords[0]][cords[1]-x] == 0): 
-                grid_coppy[cords[0]][cords[1]-x] = word[x]
+                grid_coppy[cords[0]][cords[1]-x] = 0
+                if x == word_len - 1:
+                    for z in range(word_len):
+                        grid_coppy[cords[0]][cords[1]-z] = word[z]
+                        if z == word_len - 1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
                 return (grid)
@@ -164,7 +185,14 @@ def insert_into_grid(cords, grid, word):
         print("trying right")
         for x in range(word_len):
             if (grid_coppy[cords[0]][cords[1]+x] == 0): 
-                grid_coppy[cords[0]][cords[1]+x] = word[x]
+                grid_coppy[cords[0]][cords[1]+x] = 0
+                if x == word_len - 1:
+                    for z in range(word_len):
+                        grid_coppy[cords[0]][cords[1]+z] = word[z]
+                        if z == word_len - 1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
                 return (grid)
@@ -177,7 +205,14 @@ def insert_into_grid(cords, grid, word):
         print("trying DiagUpRight")
         for x in range(word_len):
             if (grid_coppy[cords[0]-x][cords[1]+x] == 0): 
-                grid_coppy[cords[0]-x][cords[1]+x] = word[x]
+                grid_coppy[cords[0]-x][cords[1]+x] = 0
+                if x == word_len - 1:
+                    for z in word_len:
+                        grid_coppy[cords[0]-z][cords[1]+z] = word[z]
+                        if z == word_len - 1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
                 return(grid)
@@ -191,7 +226,14 @@ def insert_into_grid(cords, grid, word):
         print("trying diagUpLeft")
         for x in range(word_len):
             if (grid_coppy[cords[0]-x][cords[1]-x] == 0):
-                grid_coppy[cords[0]-x][cords[1]-x] = word[x]
+                grid_coppy[cords[0]-x][cords[1]-x] = 0
+                if x == word_len - 1:
+                    for z in word_len:
+                        grid_coppy[cords[0]-z][cords[1]-z] = word[z]
+                        if z == word_len - 1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
                 return (grid)
@@ -204,7 +246,14 @@ def insert_into_grid(cords, grid, word):
         print("trying diagDownRight")
         for x in range(word_len):
             if (grid_coppy[cords[0]+x][cords[1]+x] == 0):
-                grid_coppy[cords[0]+x][cords[1]+x] = word[x]
+                grid_coppy[cords[0]+x][cords[1]+x] = 0
+                if x == word_len - 1:
+                    for z in range(word_len):
+                        grid_coppy[cords[0]+z][cords[1]+z] = word[z]
+                        if z == word_len - 1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
                 return (grid)
@@ -217,7 +266,14 @@ def insert_into_grid(cords, grid, word):
         print("diagDownLeft")
         for x in range(word_len):
             if (grid_coppy[cords[0]+x][cords[1]-x] == 0):
-                grid_coppy[cords[0]+x][cords[1]-x] = word[x]
+                grid_coppy[cords[0]+x][cords[1]-x] = 0
+                if x == word_len - 1:
+                    for z in range(word_len):
+                        grid_coppy[cords[0]+z][cords[1]-z] = word[z]
+                        if z == word_len - 1:
+                            break
+                else:
+                    continue
             else:
                 grid_coppy[cords[0]-x][cords[1]] = 0
                 return (grid)
